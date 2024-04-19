@@ -1,10 +1,15 @@
 import HeaderBar from "../../components/HeaderBar";
+import MainSection from "../../components/MainSection";
+import RightSideBar from "../../components/RightSideBar";
 
 export default function Home() {
   return (
     <main>
       <HeaderBar/>
-      <h3 className="text-red-500">Home</h3>
+      <div className="border border-black flex">
+        <MainSection />
+        <RightSideBar />
+      </div>
     </main>
   );
 }
