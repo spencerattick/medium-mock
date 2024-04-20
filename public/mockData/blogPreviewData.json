@@ -1,0 +1,57 @@
+[
+    {
+        "userName": "coolUser1",
+        "title": "Blog Title",
+        "dataOfPublication": "2021-09-01",
+        "description": "This is a blog description",
+        "profileImage": "https://via.placeholder.com/150",
+        "blogImage": "https://via.placeholder.com/150",
+        "memberOnlyContent": false,
+        "topTag": "React",
+        "length": "5 min read"
+    },
+    {
+        "userName": "coolUser2",
+        "title": "Blog Title",
+        "dataOfPublication": "2021-09-01",
+        "description": "This is a blog description",
+        "profileImage": "https://via.placeholder.com/150",
+        "blogImage": "https://via.placeholder.com/150",
+        "memberOnlyContent": false,
+        "topTag": "React",
+        "length": "5 min read"
+    },
+    {
+        "userName": "coolUser3",
+        "title": "Blog Title",
+        "dataOfPublication": "2021-09-01",
+        "description": "This is a blog description",
+        "profileImage": "https://via.placeholder.com/150",
+        "blogImage": "https://via.placeholder.com/150",
+        "memberOnlyContent": true,
+        "topTag": "React",
+        "length": "5 min read"
+    },
+    {
+        "userName": "coolUser4",
+        "title": "Blog Title",
+        "dataOfPublication": "2021-09-01",
+        "description": "This is a blog description",
+        "profileImage": "https://via.placeholder.com/150",
+        "blogImage": "https://via.placeholder.com/150",
+        "memberOnlyContent": false,
+        "topTag": "React",
+        "length": "5 min read"
+    },
+    {
+        "userName": "coolUser5",
+        "title": "Blog Title",
+        "dataOfPublication": "2021-09-01",
+        "description": "This is a blog description",
+        "profileImage": "https://via.placeholder.com/150",
+        "blogImage": "https://via.placeholder.com/150",
+        "memberOnlyContent": false,
+        "topTag": "React",
+        "length": "5 min read"
+    }
+]
