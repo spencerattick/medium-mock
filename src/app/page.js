@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
       <HeaderBar/>
-      <div className="border border-black flex">
+      <div className="border-t flex">
         <MainSection />
         <RightSideBar />
       </div>

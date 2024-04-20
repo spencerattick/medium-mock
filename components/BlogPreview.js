@@ -23,7 +23,6 @@ async function getBlogImage() {
   }
 
 
- 
   export default async function BlogPreview({ blog }) {
     const blogImage = await getBlogImage();
     const blogImageUrl = blogImage.url;
@@ -31,20 +30,20 @@ async function getBlogImage() {
     const authorData = await getAuthorProfileImage();
     const authorImageUrl = authorData.url;
     return (
-        <main className="border border-green-300 flex-1 p-4 flex items-center">
+        <main className="flex-1 p-4 flex items-center border-b">
         <div className="flex flex-col flex-1">
-          <div className="flex items-center space-x-2 text-s"> {/* Added space-x-2 for horizontal spacing */}
+          <div className="flex items-center space-x-2 text-s"> 
             <img src={authorImageUrl} alt="Author Profile" className="w-5 h-5 rounded-full" />
-            <span className="text-gray-500">{blog.userName}</span> {/* Wrapped in span for inline styling */}
+            <span className="text-gray-500">{blog.userName}</span>
             <span className="text-gray-500">&middot;</span>
             <span className="text-gray-500">{blog.dataOfPublication}</span>
           </div>
           <h1 className="font-bold">{blog.title}</h1>
           <p>{blog.description}</p>
-          <div className="flex items-center space-x-2 text-xs"> {/* Apply space-x-2 for horizontal spacing */}
+          <div className="flex items-center space-x-2 text-xs"> 
             <span className="bg-gray-100 rounded-2xl p-2">{blog.topTag}</span>
             <span>{blog.length}</span>
-            <div className="ml-auto flex items-center space-x-2"> {/* Adjusted container for tag, read time, and icons */}
+            <div className="ml-auto flex items-center space-x-2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
               </svg>
