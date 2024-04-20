@@ -15,10 +15,11 @@ export default function RecommendedTopics() {
         <main className="pb-8">
             <h2 className="font-medium">Recommended Topics</h2>
             {topics.map((topic, index) => (
-                <div key={index} className="flex items-center space-x-2 mt-4">
-                    <span className="text-xs text-gray-500">{topic}</span>
+                <div key={index} className="flex flex-row flex-wrap space-x-2 mt-4">
+                    <span className="text-xs bg-gray-100 rounded-full p-3">{topic}</span>
                 </div>
             ))}
+            <a href="" className="text-green-600 text-xs">See more topics</a>
         </main>
     )
 }
