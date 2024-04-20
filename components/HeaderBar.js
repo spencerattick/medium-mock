@@ -1,16 +1,16 @@
-import mediumLogo from '../public/mediumLogo.png';
+import mediumLogo from '../public/mediumLogo3.png';
+import Image from 'next/image';
+
 
 async function getProfilePhoto() {
     let res = '';
     try {
       res = await fetch('https://picsum.photos/100')
-
     } catch (error) {
         console.error(error);
     }
-   
     return res
-  }
+}
 
 export default async function HeaderBar() {
     const profilePhoto = await getProfilePhoto();
@@ -19,11 +19,14 @@ export default async function HeaderBar() {
         <main className="p-4">
         <div className="flex justify-between items-center"> 
             <div className="flex items-center"> 
-                <img src={mediumLogo} alt="Medium Logo" className="w-9 h-9" />
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-gray-400 w-5 h-5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                </svg>
-                <input type="text" placeholder="Search" className="ml-4" />
+                <Image src={mediumLogo} alt="Medium Logo" className="w-12 h-11 mr-2" />
+                <div className="flex items-center space-x-2 pl-3 bg-gray-100 rounded-full p-2"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-gray-400 w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                    <input type="text" placeholder="Search" className="ml-4 bg-transparent focus:outline-none" /> 
+                </div>
+               
             </div>
 
             <div className="flex items-center space-x-8">
