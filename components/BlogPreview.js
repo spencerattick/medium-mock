@@ -6,7 +6,6 @@ async function getBlogImage() {
     } catch (error) {
         console.error(error);
     }
-   
     return res
   }
 
@@ -18,7 +17,6 @@ async function getBlogImage() {
     } catch (error) {
         console.error(error);
     }
-   
     return res
   }
 
@@ -34,11 +32,11 @@ async function getBlogImage() {
         <div className="flex flex-col flex-1">
           <div className="flex items-center space-x-2 text-s"> 
             <img src={authorImageUrl} alt="Author Profile" className="w-5 h-5 rounded-full" />
-            <span className="text-gray-500">{blog.userName}</span>
+            <span className="text-gray-500 text-sm">{blog.userName}</span>
             <span className="text-gray-500">&middot;</span>
             <span className="text-gray-500">{blog.dataOfPublication}</span>
           </div>
-          <h1 className="font-bold">{blog.title}</h1>
+          <h1 className="font-bold text-2xl">{blog.title}</h1>
           <p>{blog.description}</p>
           <div className="flex items-center space-x-2 text-xs"> 
             <span className="bg-gray-100 rounded-2xl p-2">{blog.topTag}</span>
