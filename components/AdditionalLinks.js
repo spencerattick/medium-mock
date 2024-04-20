@@ -4,7 +4,7 @@ export default function AdditionalLinks() {
     return (
         <main className="pb-8 flex">
             {additionalLinks.map((link, index) => (
-                <a key={index} href="" className="text-xs">{link}</a>
+                <a key={index} href="" className="text-xs p-2">{link}</a>
             ))}
         </main>
     )

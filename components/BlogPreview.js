@@ -1,7 +1,8 @@
 async function getBlogImage() {
+    const randomInt = Math.floor(Math.random() * 1000);
     let res = '';
     try {
-      res = await fetch('https://picsum.photos/200')
+      res = await fetch(`https://picsum.photos/id/${randomInt}/200`)
 
     } catch (error) {
         console.error(error);
@@ -10,9 +11,10 @@ async function getBlogImage() {
   }
 
   async function getAuthorProfileImage() {
+    const randomInt = Math.floor(Math.random() * 1000);
     let res = '';
     try {
-      res = await fetch('https://picsum.photos/100')
+      res = await fetch(`https://picsum.photos/id/${randomInt}/100`)
 
     } catch (error) {
         console.error(error);
@@ -55,7 +57,7 @@ async function getBlogImage() {
           </div>
         </div>
         <div className="ml-4">
-          <img src={blogImageUrl} alt="Blog Image" className="w-24 h-24 ml-8" /> 
+          <img src={blogImageUrl} alt="Blog Image" className="w-28 h-28 ml-8" /> 
         </div>
       </main>
     );
