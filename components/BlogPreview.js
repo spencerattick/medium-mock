@@ -10,30 +10,15 @@ async function getBlogImage() {
     return res
   }
 
-  async function getAuthorProfileImage() {
-    const randomInt = Math.floor(Math.random() * 1000);
-    let res = '';
-    try {
-      res = await fetch(`https://picsum.photos/id/${randomInt}/100`)
-
-    } catch (error) {
-        console.error(error);
-    }
-    return res
-  }
-
-
   export default async function BlogPreview({ blog }) {
     const blogImage = await getBlogImage();
     const blogImageUrl = blogImage.url;
 
-    const authorData = await getAuthorProfileImage();
-    const authorImageUrl = authorData.url;
     return (
         <main className="flex-1 p-4 flex items-center border-b">
         <div className="flex flex-col flex-1">
           <div className="flex items-center space-x-2 text-s"> 
-            <img src={authorImageUrl} alt="Author Profile" className="w-5 h-5 rounded-full" />
+            <img src={blog.authorImageUrl} alt="Author Profile" className="w-5 h-5 rounded-full" />
             <span className="text-gray-500 text-sm cursor-pointer">{blog.userName}</span>
             <span className="text-gray-500">&middot;</span>
             <span className="text-gray-500 text-sm">{blog.dateOfPublication}</span>

@@ -32,9 +32,12 @@ export default function WhoToFollow() {
             {users.map((user) => {
                 const truncatedDescription = truncateDescription(user.userDescription, 16); // Limit to 20 words
                 return (
-                    <div key={user.userName} className="flex flex-col mt-4 items-start">
-                        <span className="text-md font-bold">{user.userName}</span>
-                        <p className="text-xs text-gray-500">{truncatedDescription}</p>
+                    <div key={user.userName} className="flex items-start mt-4">
+                        <img src={user.authorImageUrl} alt="Author Profile" className="w-7 h-7 rounded-full mr-2" />
+                        <div className="flex flex-col">
+                            <span className="text-md font-bold">{user.userName}</span>
+                            <p className="text-xs text-gray-500">{truncatedDescription}</p>
+                        </div>
                     </div>
                 );
             })}
