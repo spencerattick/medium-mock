@@ -35,7 +35,7 @@ export default async function StaffPicks() {
                     <img src={blog.authorImageUrl} alt="Author Profile" className="w-5 h-5 rounded-full" />
                     <span className="text-xs text-gray-500">{blog.userName}</span>
                     </div>
-                    <h3 className="text-md font-semibold mt-2">{blog.title}</h3>
+                    <h3 className="text-md font-bold mt-2">{blog.title}</h3>
                 </div>
                    
                 ))}
