@@ -34,14 +34,14 @@ async function getBlogImage() {
         <div className="flex flex-col flex-1">
           <div className="flex items-center space-x-2 text-s"> 
             <img src={authorImageUrl} alt="Author Profile" className="w-5 h-5 rounded-full" />
-            <span className="text-gray-500 text-sm">{blog.userName}</span>
+            <span className="text-gray-500 text-sm cursor-pointer">{blog.userName}</span>
             <span className="text-gray-500">&middot;</span>
-            <span className="text-gray-500">{blog.dataOfPublication}</span>
+            <span className="text-gray-500 text-sm">{blog.dateOfPublication}</span>
           </div>
           <h1 className="font-bold text-2xl">{blog.title}</h1>
-          <p className="pb-6">{blog.description}</p>
+          <p className="pb-6 text-gray-600">{blog.description}</p>
           <div className="flex items-center space-x-2 text-xs"> 
-            <span className="bg-gray-100 rounded-2xl p-2">{blog.topTag}</span>
+            <span className="bg-gray-100 rounded-2xl p-2.5 cursor-pointer">{blog.topTag}</span>
             <span className="pr-48">{blog.length}</span>
             <div className="ml-auto flex items-center space-x-2">
             <div class="relative flex items-center group">
