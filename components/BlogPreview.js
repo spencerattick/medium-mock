@@ -39,10 +39,10 @@ async function getBlogImage() {
             <span className="text-gray-500">{blog.dataOfPublication}</span>
           </div>
           <h1 className="font-bold text-2xl">{blog.title}</h1>
-          <p>{blog.description}</p>
+          <p className="pb-6">{blog.description}</p>
           <div className="flex items-center space-x-2 text-xs"> 
             <span className="bg-gray-100 rounded-2xl p-2">{blog.topTag}</span>
-            <span className="pr-52">{blog.length}</span>
+            <span className="pr-48">{blog.length}</span>
             <div className="ml-auto flex items-center space-x-2">
             <div class="relative flex items-center group">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 cursor-pointer">
