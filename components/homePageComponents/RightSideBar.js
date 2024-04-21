@@ -6,12 +6,12 @@ import AdditionalLinks from "./AdditionalLinks";
 
 export default function RightSideBar() {
     return (
-        <main className="border-l flex flex-col justify-between max-h-96 p-5 mr-40">
+        <main className="hidden md:flex md:flex-col md:justify-between md:max-h-96 md:p-5 md:mr-20 lg:mr-40">
             <StaffPicks />
             <RecommendedTopics />
             <WhoToFollow />
             <ReadingList />
             <AdditionalLinks />
         </main>
-    )
+    );
 }

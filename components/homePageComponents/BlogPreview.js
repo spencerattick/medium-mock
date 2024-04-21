@@ -56,7 +56,7 @@ async function getBlogImage() {
             </div>
           </div>
         </div>
-        <div className="ml-4">
+        <div className="ml-4 hidden sm:block">
           <img src={blogImageUrl} alt="Blog Image" className="w-28 h-28 ml-8" /> 
         </div>
       </main>

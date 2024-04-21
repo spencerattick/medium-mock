@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <HeaderBar/>
       <div className="border-t flex">
-        <MainSection />
+        <MainSection className="flex-1" />
         <RightSideBar />
       </div>
     </main>
