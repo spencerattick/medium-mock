@@ -13,26 +13,26 @@ async function getAuthorProfileImage() {
   }
 
 
-function getRandomStaffPicks() {
+async function getRandomStaffPicks() {
     const staffPicks = [];
     for (let i = 0; i < 3; i++) {
         const randomIndex = Math.floor(Math.random() * blogData.length);
+        const authorData = await getAuthorProfileImage();
+        blogData[randomIndex].authorImageUrl = authorData.url;
         staffPicks.push(blogData[randomIndex]);
     }
     return staffPicks;
 }
 
 export default async function StaffPicks() {
-    const staffPicks = getRandomStaffPicks();
-    const authorData = await getAuthorProfileImage();
-    const authorImageUrl = authorData.url;
+    const staffPicks = await getRandomStaffPicks();
     return (
         <main className="pb-8">
             <h2 className="font-medium">Staff Picks</h2>
             {staffPicks.map((blog, index) => (
                 <div>
                     <div key={index} className="flex items-center space-x-2 mt-4">
-                    <img src={authorImageUrl} alt="Author Profile" className="w-5 h-5 rounded-full" />
+                    <img src={blog.authorImageUrl} alt="Author Profile" className="w-5 h-5 rounded-full" />
                     <span className="text-xs text-gray-500">{blog.userName}</span>
                     </div>
                     <h3 className="text-md font-semibold mt-2">{blog.title}</h3>
