@@ -1,9 +1,11 @@
+import WriteHeaderBar from '../../../components/writePageComponents/WriteHeaderBar';
+import WriteMainSection from '../../../components/writePageComponents/WriteMainSection';
+
 export default function Write() {
     return (
-        <main className="flex flex-col items-center justify-center min-h-screen py-2">
-            <h1 className="text-6xl font-bold">
-                WRITE
-            </h1>
+        <main className="">
+            <WriteHeaderBar />
+            <WriteMainSection />
         </main>
     )
 }
