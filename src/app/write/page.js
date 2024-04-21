@@ -3,7 +3,7 @@ import WriteMainSection from '../../../components/writePageComponents/WriteMainS
 
 export default function Write() {
     return (
-        <main className="">
+        <main>
             <WriteHeaderBar />
             <WriteMainSection />
         </main>

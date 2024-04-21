@@ -17,10 +17,11 @@ export default async function WriteHeaderBar() {
     const profilePhoto = await getProfilePhoto();
     const profilePhotoUrl = profilePhoto.url;
     return (
-        <main className="p-4 mx-60">
+        <main className="p-4 md:mx-40 lg:mx-60">
             <div className="flex justify-between items-center"> 
                 <div className="flex items-center"> 
                     <Image src={mediumLogo} alt="Medium Logo" className="w-12 h-11 mr-2" />
+                    <p className="text-sm">Draft in Sample User</p>
                 </div>
             <div className="flex items-center space-x-8">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 cursor-pointer">
