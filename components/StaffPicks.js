@@ -27,7 +27,7 @@ async function getRandomStaffPicks() {
 export default async function StaffPicks() {
     const staffPicks = await getRandomStaffPicks();
     return (
-        <main className="pb-8">
+        <main className="pb-8 max-w-xs">
             <h2 className="font-medium">Staff Picks</h2>
             {staffPicks.map((blog, index) => (
                 <div>
