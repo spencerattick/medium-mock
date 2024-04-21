@@ -1,4 +1,4 @@
-import blogPreviewData from "../public/mockData/blogPreviewData.json";
+import blogPreviewData from "../../public/mockData/blogPreviewData.json";
 
 function getThreeUsers() {
     const users = [];

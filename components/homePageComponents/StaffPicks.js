@@ -1,4 +1,4 @@
-import blogData from "../public/mockData/blogPreviewData.json";
+import blogData from "../../public/mockData/blogPreviewData.json";
 
 async function getAuthorProfileImage() {
     const randomInt = Math.floor(Math.random() * 1000);

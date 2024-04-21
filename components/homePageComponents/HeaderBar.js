@@ -1,4 +1,4 @@
-import mediumLogo from '../public/mediumLogo.png';
+import mediumLogo from '../../public/mediumLogo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 

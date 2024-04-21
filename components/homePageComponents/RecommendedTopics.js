@@ -1,4 +1,4 @@
-import topicsData from '../public/mockData/topicsData';
+import topicsData from '../../public/mockData/topicsData';
 
 function getRandomTopics() {
     const topics = [];

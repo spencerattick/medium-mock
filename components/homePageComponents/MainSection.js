@@ -1,5 +1,5 @@
 import BlogPreview from "./BlogPreview";
-import blogData from "../public/mockData/blogPreviewData.json";
+import blogData from "../../public/mockData/blogPreviewData.json";
 
 //add image to user here so that users have the same image each time they appear on the paeg
 async function getAuthorProfileImage() {
