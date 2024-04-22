@@ -5,15 +5,26 @@ import blogData from "../../public/mockData/blogPreviewData.json";
 async function getAuthorProfileImage() {
     for (let i = 0; i < blogData.length; i++) {
         const randomInt = Math.floor(Math.random() * 1000);
-        let res = '';
         try {
-            res = await fetch(`https://picsum.photos/id/${randomInt}/100`)
-            blogData[i].authorImageUrl = res.url;
+            const response = await fetch(`https://picsum.photos/id/${randomInt}/100`);
+            try {
+                const imageExists = await fetch(response.url);
+                if (imageExists.status === 200) {
+                    blogData[i].authorImageUrl = response.url;
+                } else {
+                    console.log('RETRYING')
+                    i--;
+                }
+            } catch (error) {
+                console.error(error);
+            }
         } catch (error) {
-            console.error(error);
+            console.error(`Error fetching image for blog ${i}:`, error);
         }
     }
 }
+
+
 
 export default async function MainSection() {
     await getAuthorProfileImage();
