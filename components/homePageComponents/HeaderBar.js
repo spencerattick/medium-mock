@@ -3,7 +3,7 @@
 import mediumLogo from '../../public/mediumLogo.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import { analytics } from '../../lib/segment'; 
+// import { analytics } from '../../lib/segment'; 
 
 
 async function getProfilePhoto() {
@@ -17,13 +17,13 @@ async function getProfilePhoto() {
 }
 
 export default async function HeaderBar() {
-    const handleEvent = async () => {
-        const [analyticsInstance] = await analytics;
-        analyticsInstance.track('Button Clicked', {
-          property1: 'value1',
-          property2: 'value2'
-        });
-      };
+    // const handleEvent = async () => {
+    //     const [analyticsInstance] = await analytics;
+    //     analyticsInstance.track('Button Clicked', {
+    //       property1: 'value1',
+    //       property2: 'value2'
+    //     });
+    //   };
 
     const profilePhoto = await getProfilePhoto();
     const profilePhotoUrl = profilePhoto.url;
@@ -50,7 +50,7 @@ export default async function HeaderBar() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
                 </svg>
 
-                <img src={profilePhotoUrl} alt="Profile" className="rounded-full w-9 h-9 cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" onClick={handleEvent} />
+                <img src={profilePhotoUrl} alt="Profile" className="rounded-full w-9 h-9 cursor-pointer hover:brightness-50 transition duration-300 ease-in-out" />
             </div>
         </div>
     </main>

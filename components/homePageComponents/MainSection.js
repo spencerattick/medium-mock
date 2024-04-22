@@ -1,5 +1,9 @@
+import { Analytics } from '@segment/analytics-node'
+const analytics = new Analytics({ writeKey: process.env.NEXT_PUBLIC_SEGMENT_WRITE_KEY })
+
 import BlogPreview from "./BlogPreview";
 import blogData from "../../public/mockData/blogPreviewData.json";
+// import { analytics } from '../../lib/segment'; 
 
 //add image to user here so that users have the same image each time they appear on the page
 async function getAuthorProfileImage() {
@@ -27,7 +31,14 @@ async function getAuthorProfileImage() {
 
 
 export default async function MainSection() {
+    analytics.page({
+        userId:'f4ca124298',
+        name: 'Home'
+      });
+
+
     await getAuthorProfileImage();
+
     return (
         <main className="flex-1 p-4 md:ml-20 lg:ml-40 mr-16">
             {
