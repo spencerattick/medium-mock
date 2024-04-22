@@ -1,11 +1,6 @@
-import { Analytics } from '@segment/analytics-node'
-const analytics = new Analytics({ writeKey: process.env.NEXT_PUBLIC_SEGMENT_WRITE_KEY })
-
 import BlogPreview from "./BlogPreview";
 import blogData from "../../public/mockData/blogPreviewData.json";
-// import { analytics } from '../../lib/segment'; 
 
-//add image to user here so that users have the same image each time they appear on the page
 async function getAuthorProfileImage() {
     for (let i = 0; i < blogData.length; i++) {
         const randomInt = Math.floor(Math.random() * 1000);
@@ -31,12 +26,6 @@ async function getAuthorProfileImage() {
 
 
 export default async function MainSection() {
-    analytics.page({
-        userId:'f4ca124298',
-        name: 'Home'
-      });
-
-
     await getAuthorProfileImage();
 
     return (

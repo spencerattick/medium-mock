@@ -10,7 +10,7 @@ function getRandomStaffPicks() {
     return staffPicks;
 }
 
-export default async function StaffPicks() {
+export default function StaffPicks() {
     const staffPicks = getRandomStaffPicks();
     return (
         <main className="pb-8 max-w-xs">
