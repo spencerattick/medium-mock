@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 async function getBlogImage() {
     const randomInt = Math.floor(Math.random() * 1000);
     let res = '';
@@ -56,9 +58,11 @@ async function getBlogImage() {
             </div>
           </div>
         </div>
-        <div className="ml-4 hidden sm:block">
-          <img src={blogImageUrl} alt="Blog Image" className="w-28 h-28 ml-8" /> 
-        </div>
+        {blogImageUrl && (
+          <div className="ml-4 hidden sm:block">
+            <Image width={200} height={200} loading="lazy" src={blogImageUrl} alt="Blog Image" className="w-28 h-28 ml-8" /> 
+          </div>
+        )}
       </main>
     );
 }

@@ -1,4 +1,5 @@
 import blogPreviewData from "../../public/mockData/blogPreviewData.json";
+import Image from "next/image";
 
 function getThreeUsers() {
     const users = [];
@@ -33,7 +34,9 @@ export default function WhoToFollow() {
                 const truncatedDescription = truncateDescription(user.userDescription, 16);
                 return (
                     <div key={user.userName} className="flex items-start mt-4">
-                        <img src={user.authorImageUrl} alt="Author Profile" className="w-7 h-7 rounded-full mr-2" />
+                        {user.authorImageUrl && (
+                            <Image loading="lazy" width={200} height={200} src={user.authorImageUrl} alt="Author Profile" className="w-7 h-7 rounded-full mr-2" />
+                        )}
                         <div className="flex flex-col">
                             <span className="text-md font-bold">{user.userName}</span>
                             <p className="text-xs text-gray-500">{truncatedDescription}</p>
