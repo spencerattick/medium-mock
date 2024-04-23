@@ -66,7 +66,7 @@ export default async function BlogPreview({ blog }) {
           </div>
           {blogImage && (
               <div className="ml-4 hidden sm:block">
-                  <Image width={200} height={200} loading="lazy" src={blogImage.url} alt="Blog Image" className="w-28 h-28 ml-8" /> 
+                  <Image width={200} height={200} loading="lazy" src={blogImage.url} alt="Blog Image" className="sm:w-14 md:h-14 md:w-28 lg:h-28 ml-8" /> 
               </div>
           )}
       </main>

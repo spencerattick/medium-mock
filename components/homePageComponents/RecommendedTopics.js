@@ -1,3 +1,5 @@
+'use cl'
+
 import topicsData from '../../public/mockData/topicsData';
 
 function getRandomTopics() {
