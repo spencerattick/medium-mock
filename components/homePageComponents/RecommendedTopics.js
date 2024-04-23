@@ -9,6 +9,7 @@ function getRandomTopics() {
     return topics;
 }
 
+
 export default function RecommendedTopics() {
     const topics = getRandomTopics();
 
@@ -17,12 +18,12 @@ export default function RecommendedTopics() {
             <h2 className="font-medium">Recommended Topics</h2>
             <div className="flex flex-wrap space-between">
                 {topics.map((topic, index) => (
-                    <div key={index} className="flex items-center">
+                    <div key={index} className="flex items-center cursor-pointer">
                         <span className="text-sm bg-gray-100 rounded-full p-3.5 m-2 cursor-pointer">{topic}</span>
                     </div>
                 ))}
             </div>
-            <a href="" className="text-green-600 text-xs">See more topics</a>
+            <a href="#" className="text-green-600 text-xs">See more topics</a>
         </main>
     );
 }

@@ -42,7 +42,7 @@ export default function WhoToFollow() {
                     </div>
                 );
             })}
-            <a href="" className="text-green-600 text-xs">See more suggestions</a>
+            <a href="#" className="text-green-600 text-xs">See more suggestions</a>
         </main>
     );
 }

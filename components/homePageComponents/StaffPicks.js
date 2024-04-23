@@ -31,7 +31,7 @@ export default function StaffPicks() {
                     <h3 className="text-md font-bold mt-2">{blog.title}</h3>
                 </div>
             ))}
-            <a href="" className="text-green-600 text-xs">See the full list</a>
+            <a href="#" className="text-green-600 text-xs">See the full list</a>
         </main>
     );
 }

@@ -1,10 +1,6 @@
-'use client';
-
 import mediumLogo from '../../public/mediumLogo.png';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { analytics } from '../../lib/segment'; 
-
 
 async function getProfilePhoto() {
     let res = '';
@@ -17,13 +13,6 @@ async function getProfilePhoto() {
 }
 
 export default async function HeaderBar() {
-    // const handleEvent = async () => {
-    //     const [analyticsInstance] = await analytics;
-    //     analyticsInstance.track('Button Clicked', {
-    //       property1: 'value1',
-    //       property2: 'value2'
-    //     });
-    //   };
 
     const profilePhoto = await getProfilePhoto();
     const profilePhotoUrl = profilePhoto.url;
