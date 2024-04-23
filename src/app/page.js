@@ -23,12 +23,23 @@ async function getAuthorProfileImage() {
   return data; // Return the modified data
 }
 
+async function getProfilePhoto() {
+  let response = '';
+  try {
+    response = await fetch('https://picsum.photos/100');
+  } catch (error) {
+      console.error(error);
+  }
+  return response;
+}
+
 export default async function Home() {
   const updatedBlogData = await getAuthorProfileImage();
+  const profilePhoto = await getProfilePhoto();
 
   return (
     <main>
-      <HeaderBar/>
+      <HeaderBar profilePhoto={profilePhoto} />
       <div className="border-t flex">
         <MainSection className="flex-1" updatedBlogData={updatedBlogData} />
         <RightSideBar />

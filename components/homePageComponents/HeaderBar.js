@@ -2,20 +2,10 @@ import mediumLogo from '../../public/mediumLogo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
-async function getProfilePhoto() {
-    let res = '';
-    try {
-      res = await fetch('https://picsum.photos/100')
-    } catch (error) {
-        console.error(error);
-    }
-    return res
-}
 
-export default async function HeaderBar() {
-
-    const profilePhoto = await getProfilePhoto();
+export default function HeaderBar( { profilePhoto } ) {
     const profilePhotoUrl = profilePhoto.url;
+    
     return (
         <main className="p-4">
             <div className="flex justify-between items-center"> 
