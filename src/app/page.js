@@ -4,8 +4,27 @@ import RightSideBar from "../../components/homePageComponents/RightSideBar";
 
 import blogData from "../../public/mockData/blogPreviewData.json";
 
+async function getBlogImage(maxRetries = 20) {
+  let response;
+  for (let i = 0; i < maxRetries; i++) {
+      const randomInt = Math.floor(Math.random() * 1000);
+      try {
+          response = await fetch(`https://picsum.photos/id/${randomInt}/200`);
+          if (response.status === 200) {
+              return response.url;
+          } else {
+              console.log('Failed to fetch: ', randomInt)
+          }
+      } catch (error) {
+          console.error(error);
+      }
+  }
+  console.error(`Failed to fetch image after ${maxRetries} retries`);
+  return null; 
+}
+
 async function getAuthorProfileImage() {
-  const data = [...blogData]; // Clone the blog data to avoid direct mutation
+  const data = [...blogData]; 
   for (let i = 0; i < data.length; i++) {
       const randomInt = Math.floor(Math.random() * 1000);
       try {
@@ -16,30 +35,32 @@ async function getAuthorProfileImage() {
               console.log('RETRYING');
               i--;
           }
+          data[i].blogPostImage = await getBlogImage();
       } catch (error) {
           console.error(`Error fetching image for blog ${i}:`, error);
       }
   }
-  return data; // Return the modified data
+  return data; 
 }
 
 async function getProfilePhoto() {
-  let response = '';
+  let photo = '';
   try {
-    response = await fetch('https://picsum.photos/100');
+    photo = await fetch('https://picsum.photos/100');
   } catch (error) {
       console.error(error);
   }
-  return response;
+  return photo.url;
 }
+
 
 export default async function Home() {
   const updatedBlogData = await getAuthorProfileImage();
-  const profilePhoto = await getProfilePhoto();
+  const profilePhotoUrl = await getProfilePhoto();
 
   return (
     <main>
-      <HeaderBar profilePhoto={profilePhoto} />
+      <HeaderBar profilePhotoUrl={profilePhotoUrl} />
       <div className="border-t flex">
         <MainSection className="flex-1" updatedBlogData={updatedBlogData} />
         <RightSideBar />

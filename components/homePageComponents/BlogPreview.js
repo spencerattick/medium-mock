@@ -1,27 +1,6 @@
 import Image from "next/image";
 
-async function getBlogImage(maxRetries = 20) {
-  let response;
-  for (let i = 0; i < maxRetries; i++) {
-      const randomInt = Math.floor(Math.random() * 1000);
-      try {
-          response = await fetch(`https://picsum.photos/id/${randomInt}/200`);
-          if (response.status === 200) {
-              return response;
-          } else {
-              console.log('Failed to fetch: ', randomInt)
-          }
-      } catch (error) {
-          console.error(error);
-      }
-  }
-  console.error(`Failed to fetch image after ${maxRetries} retries`);
-  return null; 
-}
-
-export default async function BlogPreview({ blog }) {
-  const blogImage = await getBlogImage();
-
+export default function BlogPreview({ blog }) {
   return (
       <main className="flex-1 p-4 flex items-center border-b">
           <div className="flex flex-col flex-1">
@@ -64,11 +43,9 @@ export default async function BlogPreview({ blog }) {
             </div>
               </div>
           </div>
-          {blogImage && (
-              <div className="ml-4 hidden sm:block">
-                  <Image width={200} height={200} loading="lazy" src={blogImage.url} alt="Blog Image" className="sm:w-14 md:h-14 md:w-28 lg:h-28 ml-8" /> 
-              </div>
-          )}
+          <div className="ml-4 hidden sm:block">
+              <Image width={200} height={200} loading="lazy" src={blog.blogPostImage} alt="Blog Image" className="sm:w-14 md:h-14 md:w-28 lg:h-28 ml-8" /> 
+          </div>
       </main>
   );
 }
