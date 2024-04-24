@@ -10,26 +10,22 @@ import { useDebouncedCallback } from 'use-debounce';
 export default function HeaderBar( { profilePhotoUrl } ) {
 
     const handleSearch = useDebouncedCallback((event) => {
-        console.log('Search input: ', event.target.value);
         analytics.track('Search Input', { 
             searchInputValue: event.target.value 
         });
     }, 300);
 
     const handleWriteClick = () => {
-        console.log('Write clicked');
         analytics.track('Write Clicked', {}, {}, () => {
             console.log('Write Clicked event tracked');
         });
     }
 
     const handleProfileClick = () => {
-        console.log('Profile clicked');
         analytics.track('Profile Clicked')
     }
 
     const handleNotifcationClick = () => {
-        console.log('Notification clicked');
         analytics.track('Notification Clicked')
     }
 
