@@ -9,6 +9,15 @@ export default function BlogPreview({ blog }) {
 
   const toggleSavedIcon = () => {
     setIsSaved(!isSaved); 
+    if (!isSaved) {
+      analytics.track("Blog Post Saved", {
+        title: blog.title
+      });
+    } else {
+      analytics.track("Blog Post Unsaved", {
+        title: blog.title
+      });
+    }
   };
 
   const handleUserProfileClick = (userName) => {
